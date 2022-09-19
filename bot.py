@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 
 load_dotenv(".env")
 TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 channel = ""
@@ -36,7 +35,7 @@ async def get_message():
         return first
     else:
         await channel.send("...Wait out.")
-        return get_message()
+        return await get_message()
 
 # Render the attendance image and provide a reaction to update
 async def update_attendance():
