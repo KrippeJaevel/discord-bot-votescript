@@ -1,6 +1,4 @@
-# # generate vote data for bot
-# import webbrowser
-# import sys
+# generate vote data for bot
 from PIL import Image, ImageDraw, ImageFont
 import datetime
 from bs4 import BeautifulSoup
