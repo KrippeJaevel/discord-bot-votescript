@@ -32,6 +32,9 @@ async def get_message():
     messages = await channel.history(oldest_first=True).flatten()
     if len(messages)>0:
         first = messages[0]
+        await channel.send("...Wait out.")
+        for message in messages[1:]:
+            await message.delete()
         return first
     else:
         await channel.send("...Wait out.")
